@@ -9,6 +9,7 @@ if sum of the proper devisor  of a number is equal that of the other number, the
 
 long long sum_proper_divisor(long long const num)
 {
+    std::cout <<std::endl;
     int result = 1;
     for(long long i {2}; i*i < num; ++i)
     {
@@ -17,7 +18,7 @@ long long sum_proper_divisor(long long const num)
             result += (i == num / i) ? i : (i + num / i);
         }
     }
-
+    std::cout <<std::endl;
     return result;
 }
 
@@ -42,7 +43,7 @@ int main()
     std::cout << "sum of the proper divisor of the 220: " << sum_proper_divisor(220) << std::endl;
     std::cout << "sum of the proper divisor of the 284: " << sum_proper_divisor(284) << std::endl;
     std::cout << "amicable numbers lesser than 999999:\n";
-    print_amicable_num(999999);
+    // print_amicable_num(999999);
 
     return 0;
 }

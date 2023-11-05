@@ -22,7 +22,7 @@ prime factors of a given number
 
 13
 
-** already cheched by 3 and 5 
+** already checked by 3 and 5 
 
 17 .....
 ++++++ --> we can start from i = 3 and i += 2 till we reach the sqrt(num)

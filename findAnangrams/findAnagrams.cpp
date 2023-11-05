@@ -11,14 +11,14 @@ p = abc
 1- make frequcey and sliding window vectors
 
  f: a b c d e f g h i j k l m n o p q r s t u v w x y z
-    1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+    1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
  w: a b c d e f g h i j k l m n o p q r s t u v w x y z
     1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 2- check if f and w are the same? (here yes) if yes push back the index 0
 3- find other answers ;
     3-1- go through the s put two cursor one in i = 0 and another in i + p
     3-2- update the frequency and sliding window vector
-    3-3 check if they are the same? if yes add index to the answer vector
+    3-3- check if they are the same? if yes add index to the answer vector
 
 */
 
@@ -79,12 +79,14 @@ std::vector<int> findAnagrams(std::string s, std::string p)
 
 int main()
 {
-    std::string s("cbaebabacd");
+    std::string s("cbaebabacdba");
     std::string p("abcd");
 
     auto v = findAnagrams(s, p);
     std::copy(v.begin(), v.end(), std::ostream_iterator<int>(std::cout, " "));
     std::cout << std::endl;
+    for(auto elem : v)
+        std::cout << s.substr(elem, 4) << '\n';
 
     return 0;
 }
